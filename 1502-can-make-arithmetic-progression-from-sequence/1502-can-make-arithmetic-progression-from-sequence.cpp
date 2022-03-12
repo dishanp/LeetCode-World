@@ -6,8 +6,7 @@ public:
         for(int i=1;i<arr.size()-1;i++){
             if(arr[i+1]-arr[i]!=last)
                 return 0;
-            last=arr[i+1]-arr[i];
         }
-        return 1;
+        return 7;
     }
 };

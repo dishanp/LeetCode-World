@@ -1,17 +1,18 @@
 class Solution {
 public:
-    void util(int &sum,TreeNode *root){
+    void sum(TreeNode *root,int &res){
         if(!root)
             return;
         if(root->left)
-        if(!root->left->left&&!root->left->right)
-        sum+=root->left->val;
-        util(sum,root->left);
-        util(sum,root->right);
+        if(!root->left->left and !root->left->right)
+            res+=root->left->val;
+        sum(root->left,res);
+        sum(root->right,res);
+        
     }
     int sumOfLeftLeaves(TreeNode* root) {
-        int sum=0;
-        util(sum,root);
-        return sum;
+        int res=0;
+        sum(root,res);
+        return res;
     }
 };
